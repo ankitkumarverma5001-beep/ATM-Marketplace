@@ -1,0 +1,102 @@
+:root {
+  /* ATM Brand Palette - "Vintage Thrift" */
+
+  /* Deep, rich greens instead of "fresh" greens */
+  --primary-green: #2C5530;
+  --primary-hover: #1E3B21;
+
+  /* Burnt/Rust orange instead of neon orange */
+  --primary-orange: #C15B28;
+
+  /* Earthy neutrals */
+  --accent-brown: #5D4037;
+
+  /* Warm "Old Paper" background */
+  --background: #F4F1EA;
+  --foreground: #2A2A2A;
+
+  /* Card backgrounds are slightly lighter paper */
+  --card-bg: #FCFAF6;
+  --card-border: #E8E4D9;
+
+  --font-heading: var(--font-playfair), serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B0A89E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green);
+}
+
+/* Utilities */
+.glass {
+  background: rgba(244, 241, 234, 0.95);
+  /* Opaque warm paper look */
+  border-bottom: 1px solid rgba(139, 94, 60, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title-gradient {
+  color: var(--primary-green);
+  /* Removed gradient for a more classic, solid vintage look */
+}
+
+.brand-text {
+  color: var(--primary-green);
+}
+
+.accent-text {
+  color: var(--primary-orange);
+}
