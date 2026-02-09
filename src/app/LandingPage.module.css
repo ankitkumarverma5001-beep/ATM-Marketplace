@@ -1,0 +1,124 @@
+.main {
+    padding-top: 80px;
+}
+
+.hero {
+    padding: 100px 0 60px;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(var(--primary-green-rgb), 0.05) 0%, transparent 70%);
+}
+
+.heroTitle {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.heroSubtitle {
+    font-size: 1.4rem;
+    color: #636e72;
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+.searchWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+}
+
+.searchInput {
+    flex-grow: 1;
+    padding: 16px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.searchButton {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 0 32px;
+    border-radius: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.searchButton:hover {
+    background: var(--primary-hover);
+}
+
+.categoriesSection {
+    padding: 60px 0;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.categoryCard {
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 24px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.categoryCard:hover {
+    transform: translateY(-5px);
+    background: white;
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-md);
+}
+
+.categoryIcon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.categoryName {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.feedSection {
+    padding: 60px 0 100px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.loader {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.endMessage {
+    color: #888;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 3rem;
+    }
+
+    .searchWrapper {
+        flex-direction: column;
+    }
+
+    .categoryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
