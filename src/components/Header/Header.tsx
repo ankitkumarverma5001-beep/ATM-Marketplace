@@ -11,7 +11,7 @@ export default function Header() {
                     <div className={styles.logoImage}>
                         <Image
                             src="/assets/logo.png"
-                            alt="All Thrift Marketplace Logo"
+                            alt="My Local Mall Logo"
                             width={50}
                             height={50}
                             style={{ objectFit: 'contain' }}
@@ -19,10 +19,10 @@ export default function Header() {
                     </div>
                     <div className={styles.logoText}>
                         <span className={styles.mainTitle}>
-                            <span style={{ color: 'var(--primary-orange)' }}>All</span>
-                            <span style={{ color: 'var(--primary-green)' }}> Thrift</span>
+                            <span style={{ color: 'var(--primary-orange)' }}>My</span>
+                            <span style={{ color: 'var(--primary-green)' }}> Local</span>
                         </span>
-                        <span className={styles.subTitle}>Marketplace</span>
+                        <span className={styles.subTitle}>Mall</span>
                     </div>
                 </Link>
 

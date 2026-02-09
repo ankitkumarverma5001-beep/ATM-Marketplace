@@ -1,26 +1,25 @@
-# ATM - All Thrift Marketplace
+# My Local Mall
 
-ATM (All Thrift Marketplace) is a premium, sustainable e-commerce platform curated for the Indian market. It specializes in vintage pieces and thrifted treasures, providing a modern social-media-inspired shopping experience.
+**My Local Mall** is a hyper-local, community-driven e-commerce platform that brings the neighborhood shopping experience into the digital era. It allows any user to create their own professional shop and provides customers with a seamless way to shop across multiple vendors with integrated local delivery.
 
 ---
 
 ## 🧐 What is this?
 
-**ATM** is a high-end thrift marketplace designed to bring the "treasure hunt" experience of physical thrift shops into a sleek, digital environment. It combines the ease of modern e-commerce with the curated, unique nature of vintage shopping.
+**My Local Mall** is more than just a marketplace; it's a digital twin of your local neighborhood. We empower local businesses and individual entrepreneurs to set up digital storefronts, making neighborhood commerce accessible, efficient, and modern.
 
 ## 💡 Why did we build it?
 
-Physical thrift stores in India are often unorganized or localized to specific markets. We built ATM to:
-- **Democratize Thrift**: Provide a centralized, high-quality platform for pre-loved fashion.
-- **Modernize the Experience**: Replace clunky listings with a smooth, social-media-style "Fresh Finds" feed.
-- **Promote Sustainability**: Make sustainable fashion the "cool" and easy choice for the modern Indian consumer.
+Local commerce in India is vibrant but often lacks the convenience of major e-commerce players. We built My Local Mall to:
+- **Democratize Retail**: Allow anyone to create a professional shop in minutes.
+- **Support Hyper-local**: Connect customers directly with shops in their own vicinity.
+- **Simplify Logistics**: Offer an integrated delivery service that handles the "last mile" for local vendors.
 
 ## 🚀 What problem does it solve?
 
-Most marketplaces treat thrifted items like second-hand junk. ATM solves this by:
-1. **Quality Perception**: Using a "glassmorphism" premium UI to elevate the perception of pre-owned items.
-2. **Browsing Fatigue**: Implementing **Infinite Scroll** and **Intelligent Search** to make discovery effortless.
-3. **Trust**: Providing a verified, curated look and feel that builds confidence in sustainable shopping.
+1. **Accessibility**: Discover hidden gems in your neighborhood that aren't on big platforms.
+2. **Convenience**: Add items from multiple local shops to one cart and receive them in a single delivery.
+3. **Speed**: Integrated local delivery means faster turnaround than national courier services.
 
 ---
 
@@ -32,11 +31,12 @@ Most marketplaces treat thrifted items like second-hand junk. ATM solves this by
 
 ## 🚀 Features
 
-- **Infinite Scrolling**: A seamless browsing experience with auto-loading products as you scroll.
-- **Global Search**: High-performance header search for quick discovery of vintage finds.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop views with a "glassmorphism" aesthetic.
-- **Dynamic Pricing**: Currency localized to INR (₹) with clean, premium typography.
-- **Social Feel**: Curated "Fresh Finds" feed with smooth micro-animations.
+- **Shop Creation**: Any user can register and build their own store under a specific category.
+- **Multi-Vendor Cart**: Shop across different stores and checkout in one seamless transaction.
+- **Integrated Delivery**: Reliable, local delivery service managed by the platform.
+- **Infinite Scrolling**: A seamless browsing experience for discovering local products.
+- **Category-Driven Discovery**: Navigate through "Fashion," "Books," "Electronics," and more to find specialized shops.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
 
 ## 🛠️ Tech Stack
 

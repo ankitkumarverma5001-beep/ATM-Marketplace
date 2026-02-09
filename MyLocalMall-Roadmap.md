@@ -1,55 +1,51 @@
-# 🗺️ MyLocalMall - Strategic Roadmap
+# 🗺️ My Local Mall - Strategic Roadmap
 
-Transforming ATM-Marketplace into a hyper-local, category-driven multi-vendor platform.
+Transforming neighborhood commerce into a seamless, multi-vendor digital ecosystem.
 
 ## 🎯 Vision
-To create a digital twin of local commerce, where users can bridge the gap between "discovering a category/product" and "finding the right shop."
+To create a digital twin of local commerce, where users can bridge the gap between "discovering a category/product" and "finding the right shop," with integrated logistics for the community.
 
 ---
 
-## 🏗️ Phase 1: The Storefront Revolution (Foundation)
-*Focus: Transitioning from a global product feed to a shop-centric model.*
+## 🏗️ Phase 1: The Mall Foundation (Complete)
+*Focus: Transitioning to a shop-centric model.*
 
 1.  **Dynamic Store Routing**:
     *   Implement `/store/[id]` pages that act as a mini-website for each vendor.
-    *   URL Structure: `mylocalmall.com/store-vintagewear-001`.
 2.  **Category Discovery Engine**:
-    *   New Landing Flow: **Home** -> **Category Selection** (e.g., Electronics, Fashion, Decor).
-    *   Category Page: Lists all shops currently active in that niche.
+    *   New Landing Flow: **Home** -> **Category Selection** -> **Shop List**.
 3.  **Basic Vendor Profiles**:
-    *   Stores get their own logo, bio, rating, and address/contact info.
+    *   Stores with custom logos, ratings, and locations.
 
-## 🔍 Phase 2: Product Intelligence (Discovery)
-*Focus: Helping users find products across multiple shops.*
+## 🔍 Phase 2: Global Search & User Shops
+*Focus: Allowing users to create shops and finding items across the mall.*
 
-1.  **"Where to Buy" Feature**:
-    *   If a user searches for "Vintage Denim Jacket", show a list of *shops* that carry this item.
-    *   Product Detail Page: Suggest "Similar items at shops near you."
-2.  **Universal Search**:
+1.  **Vendor Onboarding Portals**:
+    *   Allow users to register as a "Shop Owner" and build their store.
+2.  **Product Discovery**:
+    *   "Available at" view: show all shops carrying a specific item.
+3.  **Unified Search**:
     *   High-performance indexing of products across all local stores.
-3.  **Stock Availability**:
-    *   Real-time (or near real-time) inventory status for sellers.
 
-## 💳 Phase 3: Transactional Maturity
-*Focus: Turning discovery into sales.*
+## 💳 Phase 3: Integrated Mall Logistics
+*Focus: Seamless shopping and delivery.*
 
-1.  **Unified Cart**:
-    *   Allow users to add items from **multiple shops** into one cart.
-    *   Automatic split-order logic for multi-vendor checkout.
-2.  **Payment Gateway Integration**:
-    *   Support for UPI, Credit/Debit cards (Razorpay/Paytm integration).
-3.  **Order Management (Seller Side)**:
-    *   A simple dashboard for sellers to accept/reject orders and update delivery status.
+1.  **Unified Multi-Vendor Cart**:
+    *   Add items from **multiple shops** into one cart.
+2.  **Integrated Delivery Service**:
+    *   Platform-managed delivery partners for hyper-local fulfillment.
+3.  **Central Checkout**:
+    *   One transaction for the user; automatic payout splitting for vendors.
 
-## 🚀 Phase 4: Growth & Trust
-*Focus: Scale and community engagement.*
+## 🚀 Phase 4: Mall Community & Growth
+*Focus: Scale and neighborhood engagement.*
 
-1.  **Hyperlocal Optimization**:
-    *   Distance-based sorting (Show shops closest to the user's current location).
-2.  **Ratings & Social Trust**:
-    *   Verified user reviews for both specific products and the shops themselves.
-3.  **Promotion Engine**:
-    *   Allow shops to run "Flash Sales" or "Category-wide Disounts".
+1.  **Hyperlocal AI**:
+    *   Smart sorting based on distance and buyer preferences.
+2.  **Verified Reviews**:
+    *   Trust-building through verified local feedback.
+3.  **Mall Promotions**:
+    *   Flash sales and neighborhood-specific discounts.
 
 ---
 
@@ -57,16 +53,6 @@ To create a digital twin of local commerce, where users can bridge the gap betwe
 
 ### Recommended Data Model
 *   **Categories**: `id, name, icon, slug`
-*   **Stores**: `id, name, category_id, bio, logo, rating, location`
-*   **Products**: `id, store_id, name, price, description, images, inventory_count`
-
-### User Flow Logic
-1.  **Home**: User sees "What are you looking for today?" (Category grid).
-2.  **Category click**: `GET /api/stores?category={id}` -> Displays Shop Cards.
-3.  **Shop click**: `GET /api/products?store={id}` -> Displays Product Grid.
-4.  **Product click**: Show Product Details + "More from this Shop".
-
----
-
-> [!TIP]
-> **Prototyping Strategy**: Start by refactoring the current high-performance product feed into a component that accepts a `storeId` prop. This allows you to reuse 90% of your existing UI code while switching the data source dynamically.
+*   **Stores**: `owner_id, name, category_id, bio, logo, rating, location`
+*   **Products**: `id, store_id, name, price, description, images, stock`
+*   **Orders**: `customer_id, items (multi-vendor), total, delivery_status`

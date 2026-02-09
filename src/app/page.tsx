@@ -72,11 +72,11 @@ export default function Home() {
       <header className={styles.hero}>
         <div className="container">
           <h1 className={styles.heroTitle}>
-            <span className="brand-text">MyLocalMall</span>
+            <span className="brand-text">My Local Mall</span>
           </h1>
           <p className={styles.heroSubtitle}>
-            Find everything you need, from stores you trust.
-            Local commerce, reimagined.
+            Your neighborhood, digitalized.
+            Discover local shops and receive everything at your doorstep.
           </p>
 
           <div className={styles.searchWrapper}>

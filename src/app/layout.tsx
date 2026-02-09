@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ATM - All Thrift Marketplace",
-  description: "The premium marketplace for thrifted goods.",
+  title: "My Local Mall",
+  description: "The hyper-local marketplace for your neighborhood. Shop from local businesses with integrated delivery.",
 };
 
 export default function RootLayout({
