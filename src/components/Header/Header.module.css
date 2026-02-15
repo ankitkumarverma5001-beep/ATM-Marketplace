@@ -67,6 +67,26 @@
     color: var(--primary-green);
 }
 
+.cartLink {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cartBadge {
+    background-color: var(--primary-orange);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+}
+
 .navLink::after {
     content: '';
     position: absolute;

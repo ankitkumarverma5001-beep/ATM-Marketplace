@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation';
 import { MOCK_STORES, CATEGORIES } from '@/lib/mockData';
 import StoreCard from '@/components/StoreCard/StoreCard';
+import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import styles from './CategoryPage.module.css';
 
 export default function CategoryPage() {
@@ -10,8 +11,9 @@ export default function CategoryPage() {
     const categoryId = params.id as string;
     const category = CATEGORIES.find(c => c.id === categoryId);
 
+    // Filter stores by category (Shop Layer)
     const filteredStores = MOCK_STORES.filter(
-        s => s.category.toLowerCase() === categoryId.toLowerCase()
+        s => s.category.toLowerCase() === category?.name.toLowerCase()
     );
 
     if (!category) {
@@ -21,11 +23,13 @@ export default function CategoryPage() {
     return (
         <main className={styles.main}>
             <div className="container">
+                <Breadcrumbs />
+
                 <header className={styles.header}>
                     <span className={styles.icon}>{category.icon}</span>
                     <h1 className={styles.title}>{category.name} Shops</h1>
                     <p className={styles.subtitle}>
-                        Discover the best {category.name.toLowerCase()} thrift stores in your area.
+                        Explore the best {category.name.toLowerCase()} stores in your neighborhood.
                     </p>
                 </header>
 

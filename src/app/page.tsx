@@ -3,18 +3,22 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import ProductList from '@/components/ProductList/ProductList';
-import { Product } from '@/components/ProductCard/ProductCard';
+import { Product } from '@/lib/mockData';
 import { CATEGORIES } from '@/lib/mockData';
 import styles from './LandingPage.module.css';
 
 // Mock Data Generator (Global Feed)
 const generateProducts = (count: number): Product[] => {
   return Array.from({ length: count }, (_, i) => ({
-    id: i + 1,
+    id: `generated-${i + 1}`,
     name: `Vintage Treasure #${i + 1}`,
     price: Math.floor(Math.random() * 4500) + 499,
     description: `A unique, pre-loved item looking for a new home. Verified quality and authentic vintage appeal.`,
     imageUrl: `https://placehold.co/400x300/e8e8e8/4A7C59?text=Item+${i + 1}`,
+    category: 'Fashion', // Default for generated items
+    storeId: 'store-1',
+    condition: 'Good',
+    details: ['Verified Authentic', 'Vintage Condition']
   }));
 };
 

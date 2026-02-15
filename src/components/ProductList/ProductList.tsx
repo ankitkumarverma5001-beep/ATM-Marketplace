@@ -1,5 +1,6 @@
 
-import ProductCard, { Product } from '../ProductCard/ProductCard';
+import ProductCard from '@/components/ProductCard/ProductCard';
+import { Product } from '@/lib/mockData';
 import styles from './ProductList.module.css';
 
 interface ProductListProps {

@@ -42,8 +42,27 @@
     margin-bottom: 32px;
 }
 
+.sku {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.storeInfo {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.condition {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    color: var(--accent-brown);
+}
+
 .descriptionSection {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
 }
 
 .descriptionSection h3 {

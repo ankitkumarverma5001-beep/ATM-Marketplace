@@ -1,36 +1,38 @@
 "use client";
 
 import { useParams } from 'next/navigation';
-import { MOCK_STORES } from '@/lib/mockData';
+import { MOCK_PRODUCTS, MOCK_STORES, getProductById } from '@/lib/mockData';
+import { useCart } from '@/context/CartContext';
 import StoreCard from '@/components/StoreCard/StoreCard';
+import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import styles from './ProductDetail.module.css';
 
 export default function ProductDetailPage() {
     const params = useParams();
     const productId = params.id as string;
+    const { addToCart } = useCart();
 
-    // Mock product data based on ID
-    const product = {
-        id: productId,
-        name: `Vintage Treasure #${productId}`,
-        price: 2499,
-        description: "This is a meticulously curated vintage piece, verified for quality and authenticity. It represents a unique era of design and craftsmanship.",
-        imageUrl: `https://placehold.co/800x600/e8e8e8/4A7C59?text=Product+${productId}`,
-        details: [
-            "100% Authentic Vintage",
-            "Condition: Excellent (Pre-loved)",
-            "Verified by ATM Quality Check",
-            "Material: Organic Cotton / Mixed Fibers"
-        ]
+    const product = getProductById(productId);
+
+    if (!product) {
+        return <div className="container" style={{ paddingTop: '150px' }}>Product not found</div>;
+    }
+
+    const store = MOCK_STORES.find(s => s.id === product.storeId);
+
+    // Suggest other products from the same category as "Related"
+    // Or other stores in the same category
+    const relatedStores = MOCK_STORES.filter(s => s.category === product.category && s.id !== product.storeId).slice(0, 3);
+
+    const handleAddToCart = () => {
+        addToCart(product);
+        alert(`Added ${product.name} to cart!`);
     };
-
-    // Fulfilling the requirement: "stores related to the product the user is looking of"
-    // We mock this by selecting a subset of stores
-    const relatedStores = MOCK_STORES.slice(0, 3);
 
     return (
         <main className={styles.main}>
             <div className="container">
+                <Breadcrumbs />
                 <div className={styles.productSection}>
                     <div className={styles.imageGallery}>
                         <div className={`${styles.mainImageWrapper} glass`}>
@@ -41,6 +43,11 @@ export default function ProductDetailPage() {
                     <div className={styles.productInfo}>
                         <h1 className={styles.title}>{product.name}</h1>
                         <p className={styles.price}>₹{product.price.toLocaleString('en-IN')}</p>
+
+                        <div className={styles.storeInfo}>
+                            <p>Sold by: <strong>{store?.name || 'Unknown Store'}</strong></p>
+                            <p className={styles.condition}>Condition: {product.condition}</p>
+                        </div>
 
                         <div className={styles.descriptionSection}>
                             <h3>Description</h3>
@@ -55,18 +62,27 @@ export default function ProductDetailPage() {
                             ))}
                         </div>
 
-                        <button className={styles.buyButton}>Add to Cart</button>
+                        <button
+                            className={styles.buyButton}
+                            onClick={handleAddToCart}
+                        >
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
 
                 <section className={styles.sellersSection}>
-                    <h2 className={styles.sectionTitle}>Available at these Stores</h2>
-                    <p className={styles.sectionSubtitle}>Find this item and more at these verified local shops.</p>
+                    <h2 className={styles.sectionTitle}>More shops for {product.category}</h2>
+                    <p className={styles.sectionSubtitle}>Explore other local vendors in this category.</p>
 
                     <div className={styles.storesGrid}>
-                        {relatedStores.map(store => (
-                            <StoreCard key={store.id} store={store} />
-                        ))}
+                        {relatedStores.length > 0 ? (
+                            relatedStores.map(store => (
+                                <StoreCard key={store.id} store={store} />
+                            ))
+                        ) : (
+                            <p>No other stores found in this category.</p>
+                        )}
                     </div>
                 </section>
             </div>

@@ -3,18 +3,23 @@
 import { useState, useRef, useEffect, useCallback, use } from 'react';
 import { useParams } from 'next/navigation';
 import ProductList from '@/components/ProductList/ProductList';
-import { Product } from '@/components/ProductCard/ProductCard';
+import { Product } from '@/lib/mockData';
 import { MOCK_STORES } from '@/lib/mockData';
+import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import styles from './StorePage.module.css';
 
-// Mock Data Generator for Store Specific Products
+// Mock Data for Store Products
 const generateStoreProducts = (storeId: string, count: number): Product[] => {
     return Array.from({ length: count }, (_, i) => ({
-        id: Number(`${storeId.replace('store-', '')}${i + 1}`),
-        name: `Store Item #${i + 1}`,
-        price: Math.floor(Math.random() * 4500) + 499,
-        description: `A unique find from ${MOCK_STORES.find(s => s.id === storeId)?.name || 'this store'}. Condition: Excellent.`,
-        imageUrl: `https://placehold.co/400x300/e8e8e8/4A7C59?text=Store+${storeId}+Item+${i + 1}`,
+        id: `store-${storeId}-${i + 1}`,
+        name: `Local Find #${i + 1}`,
+        price: Math.floor(Math.random() * 3000) + 299,
+        description: `Exclusive item from this store.`,
+        imageUrl: `https://placehold.co/400x300/e8e8e8/4A7C59?text=StoreItem+${i + 1}`,
+        category: 'Misc',
+        storeId: storeId,
+        condition: 'Good',
+        details: ['Store Exclusive']
     }));
 };
 
@@ -88,6 +93,9 @@ export default function StorePage() {
 
     return (
         <main className={styles.main}>
+            <div className="container" style={{ marginBottom: '20px' }}>
+                <Breadcrumbs />
+            </div>
             <div className={`${styles.hero} glass`}>
                 <div className="container">
                     <div className={styles.headerContent}>
